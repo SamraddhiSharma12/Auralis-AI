@@ -1,0 +1,6 @@
+category,query,status,server_processing_time_ms,client_roundtrip_ms,top_relevance_distance,response_snippet
+Returns,What is your refund policy?,200,11039,13125.0,,Our refund policy offers a 30-day return policy for all products purchased from our store. Items must be in original condition with all tags and packa...
+Shipping,How do I track my order?,connection_error,,,,"HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=30)"
+Product FAQ,Do you ship internationally?,connection_error,,,,"HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=30)"
+Escalation,"I was charged twice for the same order, can I speak to a manager?",200,1511,3569.5,,"It sounds like you'd like to speak with a human support agent. I'm connecting you now - a representative will be with you shortly. In the meantime, is..."
+Out-of-scope,What is the capital of France?,200,17528,19570.6,,Agent stopped due to iteration limit or time limit....
