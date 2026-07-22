@@ -16,7 +16,7 @@ http://localhost:8000
 
 ## Authentication
 
-This API currently runs without authentication for local development. Auth will be added in a future version — check back or see the [Auth Guide](#) once available.
+This API currently runs without authentication for local development. Auth will be added in a future version — check back or see the [Auth Guide]() once available.
 
 ---
 
@@ -112,4 +112,4 @@ curl -X POST http://localhost:8000/chat/text \
 
 - Voice interaction guide (coming soon)
 - Authentication guide (coming soon)
-- [Source code](#)
+- [Source code](https://github.com/SamraddhiSharma12/Auralis-AI)
