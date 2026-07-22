@@ -16,7 +16,7 @@ http://localhost:8000
 
 ## Authentication
 
-This API currently runs without authentication for local development. Auth will be added in a future version — check back or see the [Auth Guide]() once available.
+This API currently runs without authentication for local development. Auth will be added in a future version — check back or see the [Auth Guide](coming soon) .
 
 ---
 
