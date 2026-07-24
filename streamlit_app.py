@@ -31,7 +31,7 @@ from datetime import datetime
 try:
     import sounddevice as sd
     AUDIO_RECORDING_AVAILABLE = True
-except ImportError:
+except (ImportError, OSError):
     AUDIO_RECORDING_AVAILABLE = False
     st.warning("Audio recording not available. Install sounddevice: `pip install sounddevice`")
 
