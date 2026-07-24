@@ -10,7 +10,9 @@ Auralis AI combines retrieval-augmented generation (RAG) with a ReAct reasoning 
 ---
 
 ## Try it yourself
+## Screenshot
 
+![Auralis AI Text Chat Demo](./screenshots/text_chat.png)
 The live demo runs in text-only mode (see [Limitations](#limitations) below). Here are a few questions to get a feel for what it can do:
 
 **Things it handles well:**
@@ -32,10 +34,18 @@ The live demo runs in text-only mode (see [Limitations](#limitations) below). He
 
 Being upfront about these matters more to me than pretending they don't exist:
 
-- **Text-only on the hosted demo.** Voice input/output is fully built and works locally (Whisper STT + Edge-TTS) — see [Local Setup](#local-setup-with-full-audio) below to try it. It's disabled on the hosted version because free-tier hosting (both Render and Streamlit Cloud) doesn't have enough memory/system libraries to run STT/TTS reliably alongside the LLM and knowledge base.
+- **Text-only on the hosted demo.** Voice input/output is fully built and works locally (Whisper STT + Edge-TTS) — see [Local Setup]
+## Screenshot
+
+![Auralis AI Audio Chat Demo](./screenshots/audio-img.png)
+(#local-setup-with-full-audio) below to try it. It's disabled on the hosted version because free-tier hosting (both Render and Streamlit Cloud) doesn't have enough memory/system libraries to run STT/TTS reliably alongside the LLM and knowledge base.
 - **Cold start delay.** The backend (Render free tier) spins down after inactivity. The first request after idle time can take 20-90 seconds while it wakes up. If your first message seems to hang or times out, just try sending it again.
 - **Occasional CPU throttling.** Streamlit Community Cloud's free tier may temporarily throttle CPU during heavy usage. The app still works, just a bit slower until the throttle clears.
-- **Health status may show "unhealthy" on first load.** The backend uses lazy-loading for STT/TTS — they only initialize on first actual use, not at startup. Until that happens, the health check reports them as "not ready," which is expected and not an error. The LLM and knowledge base are ready immediately.
+- **Health status may show "unhealthy" on first load.** 
+## Screenshot
+
+![Auralis AI Health Status](./screenshots/health-status.png)
+The backend uses lazy-loading for STT/TTS — they only initialize on first actual use, not at startup. Until that happens, the health check reports them as "not ready," which is expected and not an error. The LLM and knowledge base are ready immediately.
 - **Escalation detection is keyword-based**, not full intent recognition — it catches common phrasings ("speak to a manager," "human agent") but won't catch every possible way someone might ask for a human.
 - **Out-of-scope detection uses a fixed relevance-distance threshold**, tuned against a small internal test set. It's a heuristic, not a perfect classifier.
 - **LLM inference runs on Groq's free tier**, which enforces a token-per-minute rate limit. Heavy, rapid testing may occasionally trigger a rate-limit delay.
