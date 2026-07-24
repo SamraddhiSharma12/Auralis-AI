@@ -57,14 +57,14 @@ def check_server_status(server_url: str) -> Dict[str, Any]:
     """Check if the API server is running and get health status."""
     try:
         # Check root endpoint
-        response = requests.get(f"{server_url}/", timeout=5)
+        response = requests.get(f"{server_url}/", timeout=15)
         if response.status_code == 200:
             root_info = response.json()
         else:
             root_info = {"status": "error"}
         
         # Check health endpoint
-        health_response = requests.get(f"{server_url}/health", timeout=5)
+        health_response = requests.get(f"{server_url}/health", timeout=15)
         if health_response.status_code == 200:
             health_info = health_response.json()
         else:
@@ -93,7 +93,7 @@ def send_text_message(server_url: str, text: str, parameters: Dict[str, Any] = N
             f"{server_url}/chat/text",
             json=payload,
             headers={"Content-Type": "application/json"},
-            timeout=30
+            timeout=90
         )
         
         if response.status_code == 200:
