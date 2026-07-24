@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 from src.pipeline import AudioSupportPipeline, create_pipeline, create_pipeline, PipelineConfig
 
-load_dotenv()
+load_dotenv(override=True)
 class TextRequest(BaseModel):
     """Request model for text-based queries."""
     text: str
@@ -114,7 +114,7 @@ async def startup_event():
             "model": os.getenv("TTS_MODEL", "tts-1"),
         }
         
-        pipeline = await create_pipeline(stt_config, llm_config, tts_config)
+        pipeline = await create_pipeline(stt_config, llm_config, tts_config,lazy_load=os.getenv("LAZY_LOAD_AUDIO", "false").lower() == "true", text_only_mode=os.getenv("TEXT_ONLY_MODE", "false").lower() == "true",)
         logger.info("Pipeline initialized successfully.")
         
     except Exception as e:
