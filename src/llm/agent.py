@@ -440,6 +440,15 @@ class CustomerSupportAgent(BaseAgent):
                 "I'm connecting you now - a representative will be with you shortly. "
                 "In the meantime, is there anything I can look up for you?"
             )
+         # Out-of-scope pre-check runs BEFORE the agent, so the agent never
+         # wastes iterations trying to answer something with no relevant context
+        precheck_context = await self._rag_search(text)
+        if precheck_context == "__NO_RELEVANT_MATCH__":
+           return (
+            "I couldn't find relevant information to answer that. "
+            "Could you rephrase your question, or would you like to speak "
+            "with a human support agent?"
+            )    
 
         # Use the full LangChain agent when an LLM/API key is available.
         if self.agent_executor is not None:

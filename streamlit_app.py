@@ -21,6 +21,7 @@ import json
 import time
 import io
 import wave
+import os
 import numpy as np
 from typing import Dict, Any, Optional
 import base64
@@ -35,7 +36,7 @@ except ImportError:
     st.warning("Audio recording not available. Install sounddevice: `pip install sounddevice`")
 
 # Configuration
-DEFAULT_SERVER_URL = "http://localhost:8000"
+DEFAULT_SERVER_URL =os.getenv("BACKEND_URL" ,"http://localhost:8000")
 AUDIO_SAMPLE_RATE = 16000
 AUDIO_CHANNELS = 1
 
