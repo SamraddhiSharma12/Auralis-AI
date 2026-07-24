@@ -138,7 +138,7 @@ class CustomerSupportAgent(BaseAgent):
         """
         try:
             import chromadb
-            from sentence_transformers import SentenceTransformer
+            
             import os
             import hashlib
 
@@ -167,8 +167,7 @@ class CustomerSupportAgent(BaseAgent):
             # Load predefined customer support documents
             knowledge_documents = self._get_customer_support_documents()
 
-            # Initialize embedding model
-            self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+            
 
             # Process and store documents
             print(f"Ingesting {len(knowledge_documents)} documents into knowledge base...")

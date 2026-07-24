@@ -42,7 +42,7 @@ edge-tts>=6.1.9              # Free Microsoft Edge voices
 
 # Vector stores and embeddings (for RAG) - Required
 chromadb>=0.4.18
-sentence-transformers>=2.2.2
+#sentence-transformers>=2.2.2
 
 # HTTP client and file handling
 httpx>=0.25.0
