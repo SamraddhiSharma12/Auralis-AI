@@ -6,6 +6,7 @@ Auralis AI combines retrieval-augmented generation (RAG) with a ReAct reasoning 
 
 **Live Demo:** [https://auralis-ai.streamlit.app/](#) 
 **API Docs:** [QUICKSTART.md](./QUICKSTART.md)
+- [Troubleshooting](TROUBLESHOOTING.md)
 
 ---
 
